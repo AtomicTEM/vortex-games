@@ -186,7 +186,7 @@ async function getModName(manifestPath) {
       : Promise.reject(new util.DataInvalid('Invalid manifest.json file'));
   } catch(err) {
     log('error', 'Unable to parse manifest.json file', manifestPath);
-    return path.basename(manifestPath, path.extname(manifestPath));
+    return path.basename(path.dirname(manifestPath));
   }
 }
 
